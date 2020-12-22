@@ -1,0 +1,82 @@
+---
+title: "MDS.dodder.updated"
+author: "Yasu & Min-Yao"
+date: "2020/09/20"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r}
+# load library
+library(limma)
+library(edgeR)
+```
+
+```{r}
+# read in data
+raw.data <- read.csv("TMM-Counts-all-Libraries-Table_organized.csv", row.names=1)
+Normexplog<- log(raw.data,2)  
+pdf("boxplot.all.pdf")
+boxplot (Normexplog)
+dev.off()
+```
+
+```{r}
+# read in data and check
+length(raw.data$flowers_tobbaco1)
+sub <- subset(raw.data,rowSums(raw.data) > 40)
+length(sub$flowers_tobbaco1)
+```
+
+```{r}
+# normalization
+y <- DGEList(counts=sub)
+y <- calcNormFactors(y)
+y$pseudo<- equalizeLibSizes(y)
+write.csv (y$pseudo$pseudo.counts,"dodder.all.transcripts.norm.40.csv")
+```
+
+```{r}
+# read in normalized data
+data <- read.csv("dodder.all.transcripts.norm.40.csv", row.names=1)
+dim(data) 
+```
+
+```{r}
+# Boxplot of normalized data
+Normexplog<- log(data,2)  
+pdf("boxplot.norm.40.all.pdf")
+boxplot (Normexplog)
+dev.off()
+```
+
+```{r}
+# load library
+library(ggplot2)
+```
+
+```{r}
+## MDS using dist and cmdscale
+m <- cmdscale(dist(scale(t(data))))
+colnames(m) <- c("x", "y")
+m<-as.data.frame(m)
+m$sample <- c("flowers","flowers","flowers","flowers","flowers","flowers","flowers","flowers",
+"haustoria","haustoria","haustoria","haustoria","haustoria","haustoria","haustoria","haustoria",
+"prehaustoria","prehaustoria","prehaustoria","prehaustoria","prehaustoria","prehaustoria","prehaustoria","prehaustoria",
+"seedlings","seedlings","seedlings","seedlings","seed","seed","seed","seed",
+"stem","stem","stem","stem","stem","stem","stem","stem")
+levels(m$sample)
+m$sample <- factor(m$sample, levels = c("seed", "seedlings", "stem" ,"prehaustoria","haustoria","flowers"))
+```
+
+```{r}
+# output MDS plot
+pdf("MDScmdscale.all.pdf",height=6,width=8)
+ggplot(m, aes(x,y,colour=sample))+geom_point(size=5)+theme_bw()
+dev.off()
+```
+
+
+
+

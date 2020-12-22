@@ -1,0 +1,131 @@
+---
+title: "PCA_dodder_updated"
+author: "Yasu & Min-Yao"
+date: "2020/09/20"
+output: html_document
+---
+
+```{r}
+## Read in data and calculate average value data
+data <- read.csv("dodder.all.transcripts.norm.40.csv", row.names=1)
+names(data)
+data$flowers <- rowMeans(subset(data[1:8]))
+data$haustoria <- rowMeans(subset(data[9:16]))
+data$prehaustoria <- rowMeans(subset(data[17:24]))
+data$seedlings <- rowMeans(subset(data[25:28]))
+data$seeds <- rowMeans(subset(data[29:32]))
+data$stem <- rowMeans(subset(data[33:40]))
+ave <- subset(data[41:46])
+ave$sd <- apply(ave,1,function(d)sd(d))
+ave$average <- rowMeans(subset(ave[1:6]))
+ave$cv <- ave$sd / ave$average
+write.csv(ave,"Dodder.all.transcripts.ave.csv")
+```
+
+```{r}
+## Read in average value data
+data<- read.csv("Dodder.all.transcripts.ave.csv",header=TRUE)
+data[is.na(data)] <- 0
+names(data)
+attach(data)
+```
+
+```{r}
+## count No. of expressed genes for each stage
+length(data$X)                           
+length(subset(data,flowers>0.1)$X)       
+length(subset(data,haustoria>0.1)$X)     
+length(subset(data,prehaustoria>0.1)$X)  
+length(subset(data,seedlings>0.1)$X)     
+length(subset(data,seeds>0.1)$X)         
+length(subset(data,stem>0.1)$X)          
+```
+
+```{r}
+## Select only those genes CV > 0.85
+quantile(data$cv) 
+sub.data <- subset(data, cv > 0.85)
+head(sub.data)
+length(sub.data$X) #9637
+```
+
+```{r}
+## Create a matrix of the data to perform a PCA on and scale it
+m.sub.data <- as.matrix(sub.data[2:7])
+sc.sub.data <- t(scale(t(m.sub.data)))
+tisdata <- as.matrix( sc.sub.data, dimnames=list(rownames(X)) )
+head(tisdata)
+```
+
+```{r}
+## Perform the PCA
+library(ggplot2)
+tispca <- prcomp(tisdata, scale=TRUE)
+summary(tispca)
+
+```
+
+```{r}
+## Retrieve PCA scores
+tis.pca.scores <- data.frame(tispca$x)
+names(tis.pca.scores)
+rownames(tis.pca.scores)
+head(tis.pca.scores)
+```
+
+```{r}
+## Write out master data files with original data, scaled data, and PCA results
+data.val <- cbind(sub.data,sc.sub.data,tis.pca.scores)
+data.val2 <- cbind(sub.data,tis.pca.scores)
+write.table(data.val, file="pca.scores.transcripts.all.txt")
+write.table(tispca$rotation, "loadings.transcripts.all.txt")
+head(data.val2)
+```
+
+```{r}
+pdf("plain.transcripts.all.PC1PC2.pdf", width=6, height=6)
+t <- ggplot(data.val2, aes(PC1, PC2))
+t + geom_point(alpha=0.2, size=2.5) + theme_bw() 
+dev.off()
+
+# tiff("plain.transcripts.all.PC1PC2.tif", width=8, height=8, unit="in",compression="lzw",res=100)
+# t <- ggplot(data.val2, aes(PC1, PC2))
+# t + geom_point(alpha=0.20) + theme_bw() 
+# dev.off()
+```
+
+```{r}
+pdf("plain.transcripts.all.PC3PC4.pdf", width=6, height=6)
+t <- ggplot(data.val2, aes(PC3, PC4))
+t + geom_point(alpha=0.2, size=2.5) + theme_bw() 
+dev.off()
+
+# tiff("plain.transcripts.all.PC3PC4.tif", width=8, height=8, unit="in",compression="lzw",res=100)
+# t <- ggplot(data.val2, aes(PC3, PC4))
+# t + geom_point(alpha=0.20) + theme_bw() 
+# dev.off()
+```
+
+```{r}
+library(ggplot2)
+library(reshape)
+load <- read.table("loadings.transcripts.all.txt")
+load <- load[1:4]
+load$sample <- factor(c("flowers","haustoria","prehaustoria","seedlings","seeds","stem"))
+head(load)
+m.load<-melt(load,id=c("sample"))
+head(m.load)
+levels(m.load$sample)
+m.load$sample <- factor(m.load$sample, levels = c("seeds", "seedlings","stem","prehaustoria","haustoria","flowers"))
+
+pdf("loadings.transcripts.all.pdf", width=6, height=8)
+ggplot(m.load,aes(x = sample, y = value)) + geom_bar(width=.7, stat='identity') + theme_bw() + facet_wrap(~variable)
+dev.off()
+
+# tiff("loadings.transcripts.all.tif", width=5, height=8, unit="in",compression="lzw",res=100)
+# ggplot(m.load,aes(x = sample, y = value)) + geom_bar(width=.7, stat='identity') + theme_bw() + facet_wrap(~variable)
+# dev.off()
+```
+
+
+

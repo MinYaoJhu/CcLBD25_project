@@ -1,0 +1,189 @@
+---
+title: "SOM_dodder_updated"
+author: "Yasu & Min-Yao"
+date: "2019/12/17 and 2020/07/22"
+output: html_document
+---
+
+```{r}
+library(class)
+library(MASS)
+library(kohonen)
+library(ggplot2)
+```
+
+```{r}
+###all
+## Read in PCA result data
+data <- read.table("pca.scores.transcripts.all.txt",header=TRUE)
+names(data)
+head(data)
+```
+
+```{r}
+## Create a matrix and scale data (data is already scaled, so nothing happens actually besides making a matrix)
+m.data <- as.matrix(data[11:16])
+sc.data <- t(scale(t(m.data)))
+```
+
+```{r}
+## Set a random seed so that SOM results are reproducible
+set.seed(2)
+```
+
+```{r}
+## Perform SOM (6 x 2)
+ssom <- som(sc.data, somgrid(6,2,"hexagonal"))
+summary(ssom)
+```
+
+```{r}
+ch <- ssom$changes
+ch <- as.data.frame(ch)
+ch$x <- c(1:100)
+
+pdf("ssom.changes.transcripts.all.6x2.pdf", width=8, height=8)
+ggplot(ch,aes(x,V1))+geom_line(size=1.2,colour="grey30")+theme_bw()
+dev.off()
+#tiff("ssom.changes.transcripts.all.6x2.tiff", width=8, height=8, unit="in",compression="lzw",res=100)
+#ggplot(ch,aes(x,V1))+geom_line(size=1.2,colour="grey30")+theme_bw()
+#dev.off()
+```
+
+```{r}
+pdf("ssom.changes.pdf")
+plot(ssom, type ="changes")
+dev.off()
+
+pdf("ssom.codes.pdf")
+plot(ssom, type = "codes")
+dev.off()
+
+pdf("ssom.counts.pdf")
+plot(ssom, type = "counts")
+dev.off()
+
+pdf("ssom.quality.pdf")
+plot(ssom, type = "quality")
+dev.off()
+```
+
+```{r}
+## Create and write-out master SOM file
+data.val2 <- cbind(data,ssom$unit.classif,ssom$distances)
+head(data.val2)
+write.csv(data.val2, file="supersom.data.transcripts.all.6x2.csv")
+```
+
+```{r}
+## Codes for the SOM nodes
+codes <- ssom$codes
+head(codes)
+write.table(codes, file="codes.transcripts.all.6x2.txt")
+```
+
+```{r}
+## Visualization
+data <- read.csv("supersom.data.transcripts.all.6x2.csv",header=TRUE)
+attach(data)
+names(data)
+tail(data)
+```
+
+```{r}
+## PCA+SOM graphs
+library(ggplot2)
+
+pdf("node.transcripts.all.PC1PC2.6x2.pdf", width=8, height=6)
+t <- ggplot(data, aes(PC1, PC2))
+t + geom_point(alpha=0.5, size=2.5,aes(colour=factor(ssom.unit.classif))) + theme_bw() + 
+scale_colour_manual(values=c("tomato","springgreen3","blue3","orange1","magenta3","yellow4","turquoise2","deeppink1","black","palegreen4","yellow","green"))
+dev.off()
+
+pdf("node.transcripts.all.PC3PC4.6x2.pdf", width=8, height=6)
+t <- ggplot(data, aes(PC3, PC4))
+t + geom_point(alpha=0.5,size=2.5, aes(colour=factor(ssom.unit.classif))) + theme_bw() + 
+scale_colour_manual(values=c("tomato","springgreen3","blue3","orange1","magenta3","yellow4","turquoise2","deeppink1","black","palegreen4","yellow","green"))
+dev.off()
+```
+
+```{r}
+## PCA+SOM graphs output in tiff
+# library(ggplot2)
+# 
+# tiff("node.transcripts.all.PC1PC2.6x2.tif", width=10, height=8, unit="in",compression="lzw",res=100)
+# t <- ggplot(data, aes(PC1, PC2))
+# t + geom_point(alpha=0.5, size=2.5,aes(colour=factor(ssom.unit.classif))) + theme_bw() + 
+# scale_colour_manual(values=c("tomato","springgreen3","blue3","orange1","magenta3","yellow4","turquoise2","deeppink1","black","palegreen4","yellow","green"))
+# dev.off()
+# 
+# tiff("node.transcripts.all.PC3PC4.6x2.tif", width=10, height=8, unit="in",compression="lzw",res=100)
+# t <- ggplot(data, aes(PC3, PC4))
+# t + geom_point(alpha=0.5,size=2.5, aes(colour=factor(ssom.unit.classif))) + theme_bw() + 
+# scale_colour_manual(values=c("tomato","springgreen3","blue3","orange1","magenta3","yellow4","turquoise2","deeppink1","black","palegreen4","yellow","green"))
+# dev.off()
+```
+
+```{r}
+## Boxplots for each SOM group (node)
+# Node
+library(reshape)
+
+sub.group <- subset(data, ssom.unit.classif=="3")
+expression <- sub.group[c(2,16,15,17,14,13,12)]
+m.expression <- melt(expression, id=c("X")) # multiple column into one column
+head(m.expression)
+
+#tiff("node9.boxplot.transcripts.all.6x2.tif", width=4, height=8, unit="in",compression="lzw",res=100)
+pdf("node3.boxplot.transcripts.all.6x2.pdf", width=4, height=8)
+p <- ggplot(m.expression, aes(x=variable, y=value))
+p + geom_point(position="jitter",size=1.5,alpha=0.6) + geom_boxplot(outlier.size=0, alpha=0.8) + theme_bw()
+dev.off()
+```
+
+```{r}
+## Loess regression lines for all nodes
+
+expression <- data[c(2,16,15,17,14,13,12,24)]
+m.expression <- melt(expression, id=c("X","ssom.unit.classif"))
+#tiff("loes.lines.tif", width=32, height=16, unit="in",compression="lzw",res=250)
+pdf("loes.lines.pdf", width=10, height=5)
+p <- ggplot(m.expression, aes(x=variable, y=value, color=factor(ssom.unit.classif),group=ssom.unit.classif))
+p + theme_bw() + 
+stat_smooth(method="loess",aes(fill=factor(ssom.unit.classif)),alpha=0.3,size=1) +
+scale_colour_manual(values=c("tomato","springgreen3","blue3","orange1","magenta3","yellow4","turquoise2","deeppink1","black","palegreen4","yellow","green")) +
+scale_fill_manual(values=c("tomato","springgreen3","blue3","orange1","magenta3","yellow4","turquoise2","deeppink1","black","palegreen4","yellow","green"))
+dev.off()
+```
+
+```{r}
+## heatmap
+library(gplots)
+library(RColorBrewer)
+
+h.data <- subset(data[c(12:17,24)])
+rownames(h.data) <- data[,2]
+#sh.data <- h.data[order(h.data$ssom.unit.classif),]
+
+hmcol <- colorRampPalette(brewer.pal(11, "RdBu"))(64)
+#hmcol <- colorRampPalette( colors = brewer.pal(10,"RdBu") )
+#hmcol <- colorRampPalette( c("blue","white","red"))(10)
+
+cluster = 3
+data.c<- subset(h.data,h.data$ssom.unit.classif==cluster)
+data.c <- subset(data.c[c(5,4,6,3,2,1)])
+
+#tiff(paste("heatmap.cluter",cluster,".tif"), width=4, height=10, unit="in",compression="lzw",res=200)
+pdf(paste("heatmap.cluter",cluster,".pdf"), width=2, height=5)
+heatmap.2(as.matrix(data.c),col=rev(hmcol),scale="row",dendrogram="none",
+          key=FALSE,keysize=0.5,density.info="none",trace="none",cexCol=0.5,labRow=NA,Colv=FALSE)
+dev.off()
+
+#tiff("key.tif")
+pdf("key.pdf")
+key <- display.brewer.pal(11, "RdBu")
+dev.off()
+
+table(h.data$ssom.unit.classif)
+```
+
