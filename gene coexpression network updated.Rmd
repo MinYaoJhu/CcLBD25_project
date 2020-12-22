@@ -1,0 +1,201 @@
+---
+title: "WEIGHTED EDGES GENE COEXPRESSION NETWORK updated"
+date: "08/02/2020"
+author: "Hokuto Nakayama"
+modified: "Min-Yao Jhu & Steven D. Rowland & Karolina Czarnecki"
+---
+
+# This script is modified from Hokuto Nakayama's previously published R script for RNA-Seq gene coexpression network analysis deposited on GitHub (Link: https://github.com/Hokuto-GH/gene-coexpression-network-script).
+
+#load package
+```{r}
+library(reshape)
+```
+
+#load data
+```{r}
+counts=read.csv ("SOM9_all_Cc_tissue_ID_ex.csv")
+str(counts)
+dim(counts)
+```
+
+#remove 0
+```{r}
+# counts1 <- counts1[rowSums(counts1) > 0,]
+# dim(counts1)
+```
+
+#add col/rownames
+```{r}
+# samples=colnames(counts1)
+# genes=rownames(counts1)
+```
+
+#check histogram
+```{r}
+# Y.u=t(log(counts1+(1e-6)))
+# par(mfrow=c(2,1))
+# hist(as.matrix(counts1), breaks=50, main="normalized counts")
+# hist(as.vector(Y.u), breaks=50, main="logarithm of the normalized counts")
+# par(mfrow=c(1,1))
+```
+
+#normalize data instead of (above) transformation
+```{r}
+library(RSMod)
+norm.counts=data_norm(trans = counts)
+t.norm.counts=t(norm.counts)
+```
+
+#calcurate corr
+```{r}
+corr.counts=cor(t.norm.counts, method="pearson")
+hist(corr.counts[upper.tri(corr.counts)])
+```
+
+#calcurate corr
+```{r}
+# corr.u=cor(Y.u)
+# dim(corr.u)
+# corr.s=cor(Y.u, method="pearson")
+# hist(corr.s[upper.tri(corr.s)])
+```
+
+#fisher's Z transformation
+```{r}
+n=ncol(counts)      ### NOTE: this is your sample size (library#)
+z.s=0.5*log((1+corr.counts)/(1-corr.counts))
+summary(z.s[upper.tri(z.s)])
+hist(z.s[upper.tri(z.s)])
+```
+
+#cut off
+```{r}
+z.s[is.na(z.s)] <- 0
+
+thre.z=qnorm(0.93)  ## normal quanitle
+adjcent.z=abs(z.s)>thre.z  ## symmetric ajacency matrix: 1: there is an edge; 0 : there is no edge
+diag(adjcent.z)=0  ## genes do not connect themselves in the network
+# rownames(adjcent.z)=rownames(corr.u)
+# colnames(adjcent.z)=colnames(corr.u)
+sum(adjcent.z, na.rm = TRUE)/2
+```
+
+## WEIGHTED ADJACENCY MATRIX
+```{r}
+z.s[is.na(z.s)] <- 0
+
+dim(z.s)
+dim.karo=nrow(z.s)
+pos.thresh=qnorm(0.93)
+neg.thresh=-qnorm(0.93)
+karo.matrix=matrix(nrow=nrow(z.s),ncol = ncol(z.s))
+
+ for(k in 1:dim.karo){
+  for(j in (k+1):dim.karo){
+    if(j>dim.karo){break}
+        
+    if(z.s[k,j]>pos.thresh){
+    karo.matrix[k,j]=1
+      }
+
+    if(z.s[k,j]< neg.thresh){
+        karo.matrix[k,j]=-1
+          }
+  }}
+
+colnames(karo.matrix)=colnames(z.s)
+rownames(karo.matrix)=rownames(z.s)
+
+karo.matrix[is.na(karo.matrix)] <- 0
+sum(abs(karo.matrix))
+
+```
+
+#save the matrix data
+```{r}
+# write.csv(adjcent.z, "SOM9_edges.csv")
+```
+
+
+```{r}
+## convert to edgelist for use in cytoscape
+
+library(igraph)
+g <- graph.adjacency(karo.matrix,weighted = TRUE,diag = FALSE)
+dim(karo.matrix)
+karo_edge=get.data.frame(g)
+write.csv(karo_edge,file="SOM9_ID_ex_Edgelist_0.93.csv")
+karo_edge
+```
+
+#calculate community
+```{r}
+index=rowSums(adjcent.z)>0
+weight.adjcent.z=adjcent.z[index,index]
+dim(adjcent.z)
+dim(weight.adjcent.z)
+library(igraph)
+g.temp=graph.adjacency(weight.adjcent.z, mode="undirected", diag=FALSE)
+
+community.fastgreedy=fastgreedy.community(g.temp)
+community.fastgreedy
+
+table(community.fastgreedy$membership)
+```
+
+# Betweenness
+```{r}
+hist(betweenness(g.temp))
+b <- betweenness(g.temp, normalized=TRUE)
+```
+
+#edge#
+```{r}
+df.z.g=abs(rowSums(weight.adjcent.z))
+hub <- df.z.g
+```
+
+#commu#
+```{r}
+c <- community.fastgreedy$membership
+```
+
+#save the data
+```{r}
+key <- cbind(b, hub, c)
+dim(key)
+write.csv(data.frame(key),"SOM9_ID_ex_0.93_node_attributes.csv")
+```
+
+#visualization
+```{r}
+V(g.temp)$color <- "gray57"
+for(i in 1:length(unique(community.fastgreedy$membership))){
+  V(g.temp)[community.fastgreedy$membership==i]$color=i
+ 
+  if(length(which(community.fastgreedy$membership==i))<7){
+    V(g.temp)[community.fastgreedy$membership==i]$color="grey"
+  }
+}
+V(g.temp)[df.z.g>25]$color <- "darkred" # You may also want to play around with hub gene thresholds
+v.label=rep("",length(V(g.temp)))
+v.label=V(g.temp)$name  # if you want to put gene name
+v.size=rep(5,length(V(g.temp)))
+# v.size[V(g.temp)$name %in% "AP2"]=4 # if you want to change size of specific nodes
+V(g.temp)$shape <- "circle"
+pdf("SOM9_ID_ex_0.93_Network.pdf", useDingbats=FALSE)
+plot(g.temp, layout=layout.kamada.kawai(g.temp), vertex.size=v.size, vertex.frame.color=NA,vertex.label=v.label, vertex.label.cex=0.05,edge.color="gray57", edge.width =0.2)
+# dev.off()
+#plot(g.temp)
+```
+
+```{r}
+#write.graph(g.temp,"SOM9.pdf","gml")
+```
+
+```{r}
+# transfer to cytoscape
+library(RCy3)
+createNetworkFromIgraph(g,"SOM9_ID_ex_0.93")
+```
