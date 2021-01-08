@@ -14,4 +14,3 @@ After SOM clustering, we selected candidate clusters and used these genes to con
 
 [Min-Yao Jhu](mailto:minjhu@ucdavis.edu)  
 [LinkedIn](www.linkedin.com/in/min-yao-jhu)
-<img src="Image/2017_aspb.jpg" width="200">
