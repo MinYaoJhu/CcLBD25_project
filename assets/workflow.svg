@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" role="img" aria-label="CcLBD25 workflow">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1.5 1.5L8 5L1.5 8.5" fill="none" stroke="#E3B23C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0" y="0" width="1000" height="450" rx="18" fill="#13261F"/>
+<text x="40" y="42" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#E3B23C" text-anchor="start" letter-spacing="1.5">1 · TISSUE-TYPE RNA-SEQ (RANJAN ET AL. 2014)</text>
+<text x="40" y="258" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#E3B23C" text-anchor="start" letter-spacing="1.5">2 · ANALYSIS IN THIS REPOSITORY</text>
+<circle cx="75" cy="118" r="38" fill="#1C3A2F" stroke="#2E5444" stroke-width="1.5"/>
+<ellipse cx="66" cy="122" rx="8" ry="6" fill="#B07A3A" stroke="#C27A17" stroke-width="1"/>
+<ellipse cx="81" cy="114" rx="8" ry="6" fill="#B07A3A" stroke="#C27A17" stroke-width="1"/>
+<ellipse cx="83" cy="128" rx="8" ry="6" fill="#B07A3A" stroke="#C27A17" stroke-width="1"/>
+<text x="75" y="178" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Seeds</text>
+<circle cx="175" cy="118" r="38" fill="#1C3A2F" stroke="#2E5444" stroke-width="1.5"/>
+<path d="M173,140 C169,122 185,114 179,98" fill="none" stroke="#F0A93B" stroke-width="5" stroke-linecap="round"/>
+<path d="M173,140 q-8,4 -14,2 M173,140 q6,6 12,4" stroke="#B07A3A" stroke-width="2" fill="none"/>
+<text x="175" y="178" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Seedlings</text>
+<circle cx="275" cy="118" r="38" fill="#1C3A2F" stroke="#2E5444" stroke-width="1.5"/>
+<path d="M253,130 C265,98 283,140 297,104" fill="none" stroke="#F0A93B" stroke-width="6" stroke-linecap="round"/>
+<text x="275" y="178" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Stems</text>
+<circle cx="375" cy="118" r="38" fill="#1C3A2F" stroke="#2E5444" stroke-width="1.5"/>
+<rect x="381" y="94" width="10" height="48" rx="5" fill="#4E9A5B"/>
+<path d="M353,110 Q371,124 379,120" fill="none" stroke="#F0A93B" stroke-width="6" stroke-linecap="round"/>
+<ellipse cx="380" cy="120" rx="4" ry="6" fill="#C27A17"/>
+<text x="375" y="178" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Prehaustoria</text>
+<circle cx="475" cy="118" r="38" fill="#1C3A2F" stroke="#2E5444" stroke-width="1.5"/>
+<rect x="477" y="94" width="16" height="48" rx="8" fill="#4E9A5B"/>
+<path d="M453,112 Q469,124 477,120" fill="none" stroke="#F0A93B" stroke-width="6" stroke-linecap="round"/>
+<path d="M476,115 L487,120 L476,125 Z" fill="#F0A93B" stroke="#C27A17" stroke-width="1"/>
+<text x="475" y="178" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Haustoria</text>
+<circle cx="575" cy="118" r="38" fill="#1C3A2F" stroke="#2E5444" stroke-width="1.5"/>
+<circle cx="567" cy="112" r="6.5" fill="#F4EBD8" stroke="#C9BFA8" stroke-width="1"/>
+<circle cx="567" cy="112" r="2" fill="#E3B23C"/>
+<circle cx="581" cy="110" r="6.5" fill="#F4EBD8" stroke="#C9BFA8" stroke-width="1"/>
+<circle cx="581" cy="110" r="2" fill="#E3B23C"/>
+<circle cx="575" cy="124" r="6.5" fill="#F4EBD8" stroke="#C9BFA8" stroke-width="1"/>
+<circle cx="575" cy="124" r="2" fill="#E3B23C"/>
+<circle cx="585" cy="124" r="6.5" fill="#F4EBD8" stroke="#C9BFA8" stroke-width="1"/>
+<circle cx="585" cy="124" r="2" fill="#E3B23C"/>
+<circle cx="565" cy="126" r="6.5" fill="#F4EBD8" stroke="#C9BFA8" stroke-width="1"/>
+<circle cx="565" cy="126" r="2" fill="#E3B23C"/>
+<text x="575" y="178" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Flowers</text>
+<text x="325" y="200" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#A9C7B4" text-anchor="middle">six Cuscuta campestris tissues</text>
+<line x1="640" y1="118" x2="700" y2="118" stroke="#E3B23C" stroke-width="2" stroke-linecap="round" marker-end="url(#ah)"/>
+<rect x="712" y="78" width="240" height="80" rx="12" fill="#0E1C17" stroke="#E3B23C" stroke-width="2"/>
+<text x="832" y="110" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#E3B23C" text-anchor="middle">TMM-normalized counts</text>
+<text x="832" y="134" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#A9C7B4" text-anchor="middle">edgeR · genome: Vogel et al. 2018</text>
+<path d="M832,162 V222 H75 V292" fill="none" stroke="#A9C7B4" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#ah)"/>
+<rect x="51" y="311" width="68" height="68" rx="8" fill="#1C3A2F" stroke="#2E5444"/>
+<path d="M59,371 H113 M59,371 V317" stroke="#A9C7B4" stroke-width="1.2" fill="none"/>
+<circle cx="71.7" cy="354.2" r="3.6" fill="#F6D28B"/>
+<circle cx="69.5" cy="357.7" r="3.6" fill="#F6D28B"/>
+<circle cx="68.6" cy="355.1" r="3.6" fill="#F6D28B"/>
+<circle cx="74.8" cy="352.2" r="3.6" fill="#F6D28B"/>
+<circle cx="86.8" cy="335.7" r="3.6" fill="#F0A93B"/>
+<circle cx="83.3" cy="334.0" r="3.6" fill="#F0A93B"/>
+<circle cx="87.9" cy="334.6" r="3.6" fill="#F0A93B"/>
+<circle cx="88.0" cy="332.5" r="3.6" fill="#F0A93B"/>
+<circle cx="97.6" cy="349.5" r="3.6" fill="#D9731A"/>
+<circle cx="99.5" cy="355.2" r="3.6" fill="#D9731A"/>
+<circle cx="100.1" cy="354.1" r="3.6" fill="#D9731A"/>
+<circle cx="98.6" cy="353.9" r="3.6" fill="#D9731A"/>
+<text x="85" y="397" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">MDS</text>
+<line x1="128" y1="345" x2="170" y2="345" stroke="#E3B23C" stroke-width="2" stroke-linecap="round" marker-end="url(#ah)"/>
+<rect x="181" y="311" width="68" height="68" rx="8" fill="#1C3A2F" stroke="#2E5444"/>
+<path d="M189,371 H243 M189,371 V317" stroke="#A9C7B4" stroke-width="1.2" fill="none"/>
+<circle cx="197.8" cy="343.6" r="3.6" fill="#F6D28B"/>
+<circle cx="201.8" cy="346.6" r="3.6" fill="#F6D28B"/>
+<circle cx="200.0" cy="342.1" r="3.6" fill="#F6D28B"/>
+<circle cx="198.9" cy="343.0" r="3.6" fill="#F6D28B"/>
+<circle cx="216.4" cy="335.6" r="3.6" fill="#F0A93B"/>
+<circle cx="215.8" cy="336.1" r="3.6" fill="#F0A93B"/>
+<circle cx="220.5" cy="330.4" r="3.6" fill="#F0A93B"/>
+<circle cx="217.0" cy="333.4" r="3.6" fill="#F0A93B"/>
+<circle cx="224.7" cy="356.0" r="3.6" fill="#D9731A"/>
+<circle cx="230.8" cy="353.9" r="3.6" fill="#D9731A"/>
+<circle cx="228.7" cy="353.9" r="3.6" fill="#D9731A"/>
+<circle cx="228.6" cy="359.3" r="3.6" fill="#D9731A"/>
+<text x="215" y="397" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">PCA</text>
+<text x="215" y="414" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#A9C7B4" text-anchor="middle">CV > 0.85</text>
+<line x1="258" y1="345" x2="300" y2="345" stroke="#E3B23C" stroke-width="2" stroke-linecap="round" marker-end="url(#ah)"/>
+<polygon points="351.6,347.9 351.6,358.9 342.0,364.4 332.5,358.9 332.5,347.9 342.0,342.4" fill="#F6D28B" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="370.8,347.9 370.8,358.9 361.3,364.4 351.8,358.9 351.8,347.9 361.3,342.4" fill="#F0A93B" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="390.1,347.9 390.1,358.9 380.5,364.4 371.0,358.9 371.0,347.9 380.5,342.4" fill="#D9731A" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="409.3,347.9 409.3,358.9 399.8,364.4 390.3,358.9 390.3,347.9 399.8,342.4" fill="#7FBF7A" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="428.6,347.9 428.6,358.9 419.0,364.4 409.5,358.9 409.5,347.9 419.0,342.4" fill="#4E9A5B" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="447.8,347.9 447.8,358.9 438.3,364.4 428.8,358.9 428.8,347.9 438.3,342.4" fill="#E3B23C" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="361.2,331.1 361.2,342.1 351.7,347.6 342.1,342.1 342.1,331.1 351.7,325.6" fill="#F6D28B" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="380.4,331.1 380.4,342.1 370.9,347.6 361.4,342.1 361.4,331.1 370.9,325.6" fill="#F0A93B" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="399.7,331.1 399.7,342.1 390.2,347.6 380.6,342.1 380.6,331.1 390.2,325.6" fill="#E3B23C" fill-opacity="1" stroke="#FFFFFF" stroke-width="2.2"/>
+<polygon points="418.9,331.1 418.9,342.1 409.4,347.6 399.9,342.1 399.9,331.1 409.4,325.6" fill="#7FBF7A" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="438.2,331.1 438.2,342.1 428.7,347.6 419.1,342.1 419.1,331.1 428.7,325.6" fill="#4E9A5B" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<polygon points="457.4,331.1 457.4,342.1 447.9,347.6 438.4,342.1 438.4,331.1 447.9,325.6" fill="#E3B23C" fill-opacity="0.55" stroke="#13261F" stroke-width="1.5"/>
+<text x="395" y="397" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">SOM 6×2</text>
+<text x="395" y="414" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#E3B23C" text-anchor="middle">SOM9 selected</text>
+<line x1="490" y1="345" x2="545" y2="345" stroke="#E3B23C" stroke-width="2" stroke-linecap="round" marker-end="url(#ah)"/>
+<line x1="610.0" y1="345.0" x2="641.6" y2="341.7" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="636.2" y2="364.8" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="612.9" y2="368.0" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="598.0" y2="380.1" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="586.3" y2="356.3" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="584.0" y2="329.1" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="598.4" y2="316.7" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="615.6" y2="320.9" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="610.0" y1="345.0" x2="640.1" y2="322.4" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="641.6" y1="341.7" x2="636.2" y2="364.8" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="612.9" y1="368.0" x2="598.0" y2="380.1" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="598.0" y1="380.1" x2="586.3" y2="356.3" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="584.0" y1="329.1" x2="598.4" y2="316.7" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="615.6" y1="320.9" x2="640.1" y2="322.4" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="636.2" y1="364.8" x2="612.9" y2="368.0" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="598.4" y1="316.7" x2="615.6" y2="320.9" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<circle cx="641.6" cy="341.7" r="4.4" fill="#F0A93B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="636.2" cy="364.8" r="4.4" fill="#4E9A5B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="612.9" cy="368.0" r="4.4" fill="#7FBF7A" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="598.0" cy="380.1" r="4.4" fill="#F0A93B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="586.3" cy="356.3" r="4.4" fill="#4E9A5B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="584.0" cy="329.1" r="4.4" fill="#7FBF7A" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="598.4" cy="316.7" r="4.4" fill="#F0A93B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="615.6" cy="320.9" r="4.4" fill="#4E9A5B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="640.1" cy="322.4" r="4.4" fill="#7FBF7A" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="610" cy="345" r="8.0" fill="#E3B23C" stroke="#FFFFFF" stroke-width="2"/>
+<text x="610" y="405" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Co-expression network</text>
+<text x="610" y="422" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#A9C7B4" text-anchor="middle">normal quantile 0.93</text>
+<line x1="675" y1="345" x2="730" y2="345" stroke="#E3B23C" stroke-width="2" stroke-linecap="round" marker-end="url(#ah)"/>
+<rect x="742" y="311" width="200" height="68" rx="10" fill="#1C3A2F" stroke="#2E5444"/>
+<text x="842" y="339" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Edge &amp; node tables</text>
+<text x="842" y="359" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A9C7B4" text-anchor="middle">→ Cytoscape (RCy3)</text>
+<text x="842" y="397" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#E3B23C" text-anchor="middle">key regulators incl. CcLBD25</text>
+</svg>

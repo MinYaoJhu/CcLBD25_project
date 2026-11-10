@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="CcLBD25 logo">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1.5 1.5L8 5L1.5 8.5" fill="none" stroke="#E3B23C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="6" y="6" width="228" height="228" rx="42" fill="#13261F" stroke="#E3B23C" stroke-width="7"/>
+<line x1="120.0" y1="92.0" x2="179.5" y2="103.0" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="151.6" y2="110.1" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="122.2" y2="146.6" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="96.2" y2="127.4" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="71.4" y2="107.4" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="84.3" y2="77.7" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="96.4" y2="53.6" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="136.1" y2="32.3" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="120.0" y1="92.0" x2="162.8" y2="67.6" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="179.5" y1="103.0" x2="151.6" y2="110.1" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="122.2" y1="146.6" x2="96.2" y2="127.4" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="96.2" y1="127.4" x2="71.4" y2="107.4" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="84.3" y1="77.7" x2="96.4" y2="53.6" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="136.1" y1="32.3" x2="162.8" y2="67.6" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="151.6" y1="110.1" x2="122.2" y2="146.6" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<line x1="96.4" y1="53.6" x2="136.1" y2="32.3" stroke="#A9C7B4" stroke-width="1.6" opacity="0.8"/>
+<circle cx="179.5" cy="103.0" r="6.8" fill="#F0A93B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="151.6" cy="110.1" r="6.8" fill="#4E9A5B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="122.2" cy="146.6" r="6.8" fill="#7FBF7A" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="96.2" cy="127.4" r="6.8" fill="#F0A93B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="71.4" cy="107.4" r="6.8" fill="#4E9A5B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="84.3" cy="77.7" r="6.8" fill="#7FBF7A" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="96.4" cy="53.6" r="6.8" fill="#F0A93B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="136.1" cy="32.3" r="6.8" fill="#4E9A5B" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="162.8" cy="67.6" r="6.8" fill="#7FBF7A" stroke="#13261F" stroke-width="1.5"/>
+<circle cx="120" cy="92" r="12.4" fill="#E3B23C" stroke="#FFFFFF" stroke-width="2"/>
+<text x="120" y="197" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF" text-anchor="middle">CcLBD25</text>
+<text x="120" y="219" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#E3B23C" text-anchor="middle" letter-spacing="2">HAUSTORIUM GCN</text>
+</svg>

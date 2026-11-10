@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below."
+title: "CcLBD25: haustorium gene co-expression network analysis in Cuscuta campestris"
+type: software
+version: 1.0.0
+date-released: "2026-11-10"
+abstract: >-
+  R Markdown notebooks for MDS, PCA, self-organizing map clustering and gene
+  co-expression network analysis of Cuscuta campestris tissue transcriptomes,
+  used to identify CcLBD25 as a key regulator of haustorium development.
+authors:
+  - family-names: Jhu
+    given-names: Min-Yao
+    affiliation: Donald Danforth Plant Science Center
+    orcid: "https://orcid.org/0000-0002-8654-0977"
+repository-code: "https://github.com/MinYaoJhu/CcLBD25_project"
+license: MIT
+keywords:
+  - Cuscuta campestris
+  - parasitic plant
+  - haustorium
+  - LBD25
+  - gene co-expression network
+  - self-organizing map
+preferred-citation:
+  type: article
+  title: "LATERAL ORGAN BOUNDARIES DOMAIN 25 functions as a key regulator of haustorium development in dodders"
+  authors:
+    - family-names: Jhu
+      given-names: Min-Yao
+      orcid: "https://orcid.org/0000-0002-8654-0977"
+    - family-names: Ichihashi
+      given-names: Yasunori
+    - family-names: Farhi
+      given-names: Moran
+    - family-names: Wong
+      given-names: Caitlin
+    - family-names: Sinha
+      given-names: Neelima R.
+  journal: "Plant Physiology"
+  volume: 186
+  issue: 4
+  start: 2093
+  end: 2110
+  year: 2021
+  doi: 10.1093/plphys/kiab231

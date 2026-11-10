@@ -2,3 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Outputs written when the notebooks are run
+*.html
+*.pdf
+*_files/
+*.csv
+*.txt
