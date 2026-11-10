@@ -20,7 +20,7 @@ The laser capture microdissection (LCM) RNA-seq analysis of the haustorial inter
 
 ### License
 
-MIT License (see [`LICENSE`](LICENSE)), except that `gene coexpression network updated.Rmd` is adapted from Hokuto Nakayama's script, which has no stated license; please credit his original work when reusing that file.
+MIT License (see [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md)), except that `gene coexpression network updated.Rmd` is adapted from Hokuto Nakayama's script, which has no stated license; please credit his original work when reusing that file.
 
 ### Contact
 
