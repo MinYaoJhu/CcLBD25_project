@@ -1,7 +1,7 @@
 # CcLBD25_project
 
 Welcome! This Min-Yao's repository for CcLBD25 project.
-These R scripts were used in the project: [CcLBD25 functions as a key regulator of haustorium development in Cuscuta campestris](https://doi.org/10.1101/2021.01.04.425251)
+These R scripts were used in: **Jhu M-Y**, Ichihashi Y, Farhi M, Wong C, Sinha NR (2021). LATERAL ORGAN BOUNDARIES DOMAIN 25 functions as a key regulator of haustorium development in dodders. *Plant Physiology* 186: 2093–2110. [doi:10.1093/plphys/kiab231](https://doi.org/10.1093/plphys/kiab231) (preprint: [bioRxiv](https://doi.org/10.1101/2021.01.04.425251))
 
 We used these scripts following this order:
 #### 1. MDS (Multidimensional scaling)
@@ -14,10 +14,16 @@ After SOM clustering, we selected candidate clusters and used these genes to con
 
 This GCN script is modified from Hokuto Nakayama's previously published R script for RNA-Seq gene coexpression network analysis deposited on GitHub (Link: https://github.com/Hokuto-GH/gene-coexpression-network-script).
 
-### Author Contact Info
+### Related repository
 
-[Min-Yao Jhu](mailto:minjhu@ucdavis.edu)  
-[LinkedIn](www.linkedin.com/in/min-yao-jhu)
+The laser capture microdissection (LCM) RNA-seq analysis of the haustorial interface is in [Cuscuta_LCM_project](https://github.com/MinYaoJhu/Cuscuta_LCM_project).
 
-[Yasunori Ichihashi](mailto:yasunori.ichihashi@riken.jp)
+### License
+
+MIT License (see [`LICENSE`](LICENSE)), except that `gene coexpression network updated.Rmd` is adapted from Hokuto Nakayama's script, which has no stated license; please credit his original work when reusing that file.
+
+### Contact
+
+**Min-Yao Jhu**, Senior Research Scientist, Donald Danforth Plant Science Center
+Email: [MJhu@danforthcenter.org](mailto:MJhu@danforthcenter.org) · Website: [minyaojhu.com](https://www.minyaojhu.com)
 
