@@ -5,6 +5,7 @@
 [![Paper](https://img.shields.io/badge/Plant%20Physiology-10.1093%2Fplphys%2Fkiab231-0B6E4F)](https://doi.org/10.1093/plphys/kiab231)
 ![R](https://img.shields.io/badge/R-notebooks-276DC3?logo=r&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24096944.svg)](https://doi.org/10.5281/zenodo.24096944)
 
 This repository contains the transcriptome clustering and gene co-expression network (GCN) analysis for:
 
@@ -47,7 +48,7 @@ R with `edgeR`, `limma`, `ggplot2`, `reshape`, `kohonen`, `MASS`, `class`, `gplo
 
 ## Citation
 
-If you use this code, please cite the article above. GitHub's **"Cite this repository"** button (from [`CITATION.cff`](CITATION.cff)) gives the citation in APA and BibTeX formats.
+If you use this code, please cite the article above and the archived code: Jhu M-Y (2026). *CcLBD25: haustorium gene co-expression network analysis in Cuscuta campestris* (v1.0.0). Zenodo. [doi:10.5281/zenodo.24096944](https://doi.org/10.5281/zenodo.24096944). GitHub's **"Cite this repository"** button (from [`CITATION.cff`](CITATION.cff)) gives the citation in APA and BibTeX formats.
 
 ## License
 
